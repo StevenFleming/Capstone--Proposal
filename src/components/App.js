@@ -1,10 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ApiCall from './ApiCall';
+import "./App.css";
+
+
 
 function App() {
   return (
-    <h1>WhatsOn</h1>
+    <React.Fragment>
+      <ApiCall />
+    </React.Fragment>
   );
 }
 

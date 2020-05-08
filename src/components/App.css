@@ -1,0 +1,15 @@
+body {
+  font-family: "Times New Roman", sans-serif;
+}
+
+
+button {
+  padding: 10px;
+  font-family: "Times New Roman", cursive;
+  font-weight: 400;
+  font-size: 12pt;
+  color: #03104f;
+  border-radius: 10px;
+  border: #03104f solid 2px;
+  margin: 0 1%;
+}
