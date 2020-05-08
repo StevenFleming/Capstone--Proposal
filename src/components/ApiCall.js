@@ -1,9 +1,6 @@
 import React from 'react';
 
-
-
 class ApiCall extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -13,12 +10,36 @@ class ApiCall extends React.Component {
     };
   }
 
+  makeFunction() {
+    return console.log(0);
+  }
+  makeApiCall() {
+    fetch(`url.${process.env.REACT_APP_API_KEY}`)
+      .then(response => response.json())
+      .then(
+        (jsonifiedRepsonse) => {
+          this.setState({
+            isLoaded: true,
+            mediaSource: jsonifiedRepsonse.results
+          });
+        }
+      )
+  }
+
   render() {
-    return (<button> makeApiCall</button>)
+    return (
+      <React.Fragment>
+        <button onClick={() => this.makeApiCall()}>
+          makeApiCall
+      </button >
+      </React.Fragment >
+    );
   }
 }
 
-// makeApiCall = () => {
+export default ApiCall;
+
+// makeApiCall() {
 //   fetch(`url.${process.env.REACT_APP_API_KEY}`)
 //     .then(response => response.json())
 //     .then(
@@ -35,5 +56,3 @@ class ApiCall extends React.Component {
 //       });
 //     });
 // }
-
-export default ApiCall;
